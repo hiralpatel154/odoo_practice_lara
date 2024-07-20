@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <h1>PHP</h1>
+        <h1 class="m-5">Laravel</h1>
         <div class="row">
             <!-- Oil Free -->
             <div class="col-md-6">
