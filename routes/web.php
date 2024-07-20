@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',[CustomerController::class,'index']);
+Route::get('markup',[CustomerController::class,'markup'])->name('markup');

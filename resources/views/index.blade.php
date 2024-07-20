@@ -12,6 +12,7 @@
 
 <body>
     <div class="container">
+        <h1>Laravel</h1>
         <table class="table table-hover table-bordered m-4">
             <thead>
                 <th>CID</th>
@@ -30,6 +31,6 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="markup.php" type="button" class="btn btn-warning">Add Markup</a>
+        <a href="{{route('markup')}}" type="button" class="btn btn-warning">Add Markup</a>
     </div>
 </body>
