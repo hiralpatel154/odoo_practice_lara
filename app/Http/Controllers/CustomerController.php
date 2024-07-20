@@ -13,8 +13,11 @@ class CustomerController extends Controller
         $cust = Customer::all();
         return view('index',['customers'=>$cust]);
     }
-    public function markup(){
-        $markup = Markup::all();
-        return view('markup',['markups'=>$markup]);
+    public function markup(Request $request){
+        $customerJson = $request->query('data');
+        $customerData = json_decode(urldecode($customerJson), true);
+        $cid = $customerData['id'];
+        $markup = Markup::all()->where('cid',$cid);
+        return view('markup',['markups'=>$markup,'customer' => $customerData]);
     }
 }

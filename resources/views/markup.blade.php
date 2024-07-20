@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <h1 class="m-5">Laravel</h1>
+        <p>Customer: {{$customer['name']}}</p>
         <div class="row">
             <!-- Oil Free -->
             <div class="col-md-6">
@@ -50,7 +51,7 @@
                         @if($mup->food_type == 'Oilly')
                         <!-- Oilly -->
                         <table class="table">
-                            
+
                                     <thead>
                                         <tr>
                                             <th scope="col">From Price</th>

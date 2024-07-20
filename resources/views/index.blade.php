@@ -20,7 +20,10 @@
             </thead>
             <tbody>
                 @foreach($customers as $customer)
-                <tr>
+                    @php
+                        $customerJson = urlencode(json_encode($customer->toArray()));
+                    @endphp
+                <tr class="clickable-row" data-href="{{ route('markup',['data'=>$customerJson]) }}">
                     <td>
                         {{$customer->id}}
                     </td>
@@ -33,4 +36,14 @@
         </table>
         <a href="{{route('markup')}}" type="button" class="btn btn-warning">Add Markup</a>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $(document).on('click','.clickable-row', function(){
+                window.location=$(this).data('href');
+            })
+        })
+    </script>
 </body>
+
+</html>
