@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1 class="m-5">Laravel</h1>
-        <p>Customer: {{$customer['name']}}</p>
+        <p>Customer:{{$customer['name']}}</p>
         <div class="row">
             <!-- Oil Free -->
             <div class="col-md-6">
