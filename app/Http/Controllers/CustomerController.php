@@ -17,7 +17,54 @@ class CustomerController extends Controller
 
         $cid = $request->query('id');
         $customer = Customer::find($cid);
+        
+        // Collection
         $markup = Markup::where('cid',$cid)->get();
+        
+        // Array - convert collection into array
+        // $markup = Markup::where('cid',$cid)->get()->toArray();
+        /****
+         array:4 [▼ // app\Http\Controllers\CustomerController.php:21
+            0 => array:7 [▼
+                "id" => 3
+                "cid" => 1
+                "food_type" => "OilFree"
+                "from_price" => "100.00"
+                "to_price" => "200.00"
+                "created_at" => null
+                "updated_at" => null
+            ]
+            1 => array:7 [▼
+                "id" => 4
+                "cid" => 1
+                "food_type" => "Oilly"
+                "from_price" => "120.00"
+                "to_price" => "150.00"
+                "created_at" => null
+                "updated_at" => null
+            ]
+            2 => array:7 [▼
+                "id" => 6
+                "cid" => 1
+                "food_type" => "OilFree"
+                "from_price" => "50.00"
+                "to_price" => "150.00"
+                "created_at" => null
+                "updated_at" => null
+            ]
+            3 => array:7 [▼
+                "id" => 8
+                "cid" => 1
+                "food_type" => "OilFree"
+                "from_price" => "550.00"
+                "to_price" => "5150.00"
+                "created_at" => "2024-07-20T04:17:36.000000Z"
+                "updated_at" => "2024-07-20T04:17:36.000000Z"
+            ]
+        ]
+         */
+
+        dd($markup);
 
         $queries = DB::getQueryLog(); // Get query log
         // Log or dd the queries to inspect
