@@ -20,9 +20,6 @@
             </thead>
             <tbody>
                 @foreach($customers as $customer)
-                    @php
-                        $customerJson = urlencode(json_encode($customer->toArray()));
-                    @endphp
                 <tr class="clickable-row" data-href="{{ route('markup',['id'=>$customer->id]) }}">
                     <td>
                         {{$customer->id}}
