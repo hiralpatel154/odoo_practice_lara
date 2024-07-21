@@ -26,9 +26,11 @@ class CustomerController extends Controller
         return view('markup',['markups'=>$markup,'customer' => $customer]);
 
         /** find() vs where() in laravel
-            Single Record: Use find($id) when you know you need only one record by its primary key.
-            
+            Single Record: Use find($id) when you know you need only one record by its primary key. 
+            ** Eloquent ORM method: find($id) -> Best for straightforward CRUD operations and relationships. Ideal for most use cases where you work with individual records or simple queries.
+
             Multiple Records: Use where('field', $value)->get() when you need multiple records that match a certain condition.
+            ** Eloquent Query Builder method: where('field', $value)->get() -> Best for complex queries that require fine-grained control over the SQL being generated. Useful for advanced scenarios like complex joins, subqueries, or raw expressions.
          * **/
     }
 }
