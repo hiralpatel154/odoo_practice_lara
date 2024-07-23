@@ -64,7 +64,7 @@ class CustomerController extends Controller
         ]
          */
 
-        dd($markup);
+        // dd($markup);
 
         $queries = DB::getQueryLog(); // Get query log
         // Log or dd the queries to inspect
@@ -79,5 +79,10 @@ class CustomerController extends Controller
             Multiple Records: Use where('field', $value)->get() when you need multiple records that match a certain condition.
             ** Eloquent Query Builder method: where('field', $value)->get() -> Best for complex queries that require fine-grained control over the SQL being generated. Useful for advanced scenarios like complex joins, subqueries, or raw expressions.
          * **/
+    }
+
+    // update
+    public function update(Request $request, $id){
+        dd('up');
     }
 }
